@@ -2,22 +2,21 @@
 
 {% block package_notes %}
   {{ super() }}
-  {% if pkg_dict.get('inchi_key') %}
-    {% snippet "snippets/ckanext_rdkit_visuals_rdkit_visuals.html", pkg = pkg_dict %}
-  {% else %}
-    <section class="chemical-info">
-  <h3>{{ _('Chemical Info') }}</h3>
-    <table class="table">
-         <tbody>
-         {% if pkg_dict.inchi %}
-           <tr>
+    {% if pkg_dict.inchi_key %}
+        {% snippet "snippets/ckanext_rdkit_visuals_rdkit_visuals.html", pkg = pkg_dict %}
+    {% else %}
+        <section class="chemical-info">
+    <h3>{{ _('Chemical Info') }}</h3>
+            <table class="table">
+            <tbody>
+            {% if pkg_dict.inchi %}
+            <tr>
             <th width="25%" scope="row" class="dataset-label">{{ _("InChI") }}</th>
             <td  width="50%" class="dataset-details">{{ pkg_dict.inchi }}</td>
            </tr>
          {% endif %}
          </tbody>
     </table>
-
     </section>
   {% endif %}
 {% endblock %}
