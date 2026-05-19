@@ -1,144 +1,135 @@
+{% set data_dict = {
+  'inchi': pkg.get('inchi'),
+  'smiles': pkg.get('smiles'),
+  'inchi_key': pkg.get('inchi_key'),
+  'exact_mass': pkg.get('exactmass'),
+  'molecular_formula': pkg.get('mol_formula')
+} %}
 
-{% set data_dict = { 'inchi': pkg.get('inchi'), 'smiles': pkg.get('smiles'), 'inchi_key': pkg.get('inchi_key'), 'exact_mass' : pkg.get('exactmass'),'molecular_formula': pkg.get('mol_formula') } %}
-{# {% set mol_formula,exact_mass,inchi,iupac_name,molecule_name = h.get_molecule_data(package_id = pkg.get('id')) %}#}
-{% set dest_url = h.url_for('rdkit_visuals.display_image', package_name = pkg.get('id'), _external=True) %}
-{% set molecule_formula = h.molecule_data(package_name = pkg.get('id'))  %}
-{% set alter_names = h.alternate_names(package_name = pkg.get('id')) %}
+{% set dest_url = h.url_for('rdkit_visuals.display_image', package_name=pkg.get('id'), _external=True) %}
+{% set molecule_formula = h.molecule_data(package_name=pkg.get('id')) %}
+{% set alter_names = h.alternate_names(package_name=pkg.get('id')) %}
 
+{# Uncomment this if your helper returns these values #}
+{# {% set mol_formula, exact_mass, inchi, iupac_name, molecule_name = h.get_molecule_data(package_id=pkg.get('id')) %} #}
 
-<input type="hidden" id="ajax_url" value="{{dest_url}}">
-<input type="hidden" id="package_id" value="{{pkg.id}}">
-
+<input type="hidden" id="ajax_url" value="{{ dest_url }}">
+<input type="hidden" id="package_id" value="{{ pkg.id }}">
 
 <script type="text/javascript">
   let request = new XMLHttpRequest();
   let ajax_url = document.getElementById("ajax_url").value;
   let formdata = new FormData();
+
   formdata.set('pkg_id', document.getElementById("package_id").value);
 
   request.onreadystatechange = function() {
-      if (request.readyState == XMLHttpRequest.DONE && request.status == 200 ){
-          document.getElementById("imageid").setAttribute("src", 'data:image/png;base64,' + this.responseText);
+    if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+      let img = document.getElementById("imageid");
+      if (img) {
+        img.setAttribute("src", 'data:image/png;base64,' + this.responseText);
       }
-      else {
-          console.info(this.status)
-      }
-
+    }
   };
 
   request.open("POST", ajax_url, true);
   request.send(formdata);
-
 </script>
 
-
 <section class="chemical-info">
-
   <h3>{{ _('Chemical Information') }}</h3>
+
   <div class="row">
 
-    {% for resource in pkg.resources %}
-        {% if resource.format == 'cif' %}
-      {% set cif_resource = resource %}
-        {% snippet "snippets/ckanext_rdkit_visuals_crystal_visuals.html", pkg = pkg , resource = resource , molecule_name = molecule_name%}
+    <div class="col-md-5">
+      <img id="imageid" loading="lazy" src="" alt="Molecular Image">
+    </div>
 
-      <div id="publication_section">
-  <section class="reference-section">
-    <h3>{{ _('References') }}</h3>
-    <table class="table table-striped table-bordered table-condensed">
-      <tbody>
+    <div class="col-md-7">
 
-        {% for item in pkg.extras %}
-                {% if item.key == 'Citation' %}
-        <tr>
-          <th class="table-column-citation" colspan = "3"> {{_('Citation')}} </th>
-
-            </tr>
-        <tr>
-            <td colspan = "3">{{ item.value }}, doi: <a href="https://doi.org/{{ pkg.doi }}" target="_blank" rel="noopener noreferrer">
-               {{ pkg.doi }} </a></td>
-
-        </tr>
-       {% endif %}
-        {% endfor %}
-      </tbody>
-    </table>
-  </section>
-</div>
-
-      {% else %}
-
-      <div class = "col-md-5">  <img id="imageid" loading="lazy" src=""  alt='molecular Image'/></div>
-        <div class="col-md-7">
+      {% if alter_names %}
         <table class="table">
-           {% if alter_names %}
-           {% set rowspan = alter_names|length %}
-           <tr>
-                <th rowspan="{{ row_span }}" width="25%" scope="row" class="dataset-label">{{ _("Synonyms") }}</th>
-                {% for names in alter_names %}
-                <tr>
-                    <td width="50%" scope="row" class="dataset-details">{{ names }}</td>
-                </tr>
+          <tbody>
+            <tr>
+              <th width="25%" scope="row" class="dataset-label">{{ _("Synonyms") }}</th>
+              <td width="50%" class="dataset-details">
+                {% for name in alter_names %}
+                  {{ name }}{% if not loop.last %}<br>{% endif %}
                 {% endfor %}
-           </tr>
-         {% endif %}
-         </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      {% endif %}
 
-        <table class="table">
-         <tbody>
-         {% if molecule_name %}
-           <tr>
+      <table class="table">
+        <tbody>
+
+          {% if molecule_name is defined and molecule_name %}
+            <tr>
               <th width="25%" scope="row" class="dataset-label">{{ _("Molecule Name") }}</th>
-              <td  width="50%" class="dataset-details">{{ molecule_name }}</td>
-           </tr>
-         {% endif %}
-         {% if iupac_name %}
-          <tr>
-            <th width="25%" scope="row" class="dataset-label">{{ _("IUPAC Name") }}</th>
-            <td  width="50%" class="dataset-details">{{ iupac_name }}</td>
-           </tr>
-         {% endif %}
-         {% if data_dict.inchi %}
-           <tr>
-            <th width="25%" scope="row" class="dataset-label">{{ _("InChI") }}</th>
-            <td  width="50%" class="dataset-details">{{ data_dict.inchi }}</td>
-           </tr>
-         {% endif %}
-         {% if data_dict.smiles %}
-           <tr>
-              <th scope="row" class="dataset-label">{{ _("SMILES") }}</th>
-              <td class="dataset-details">{{ data_dict.smiles }}</td>
-           </tr>
+              <td width="50%" class="dataset-details">{{ molecule_name }}</td>
+            </tr>
           {% endif %}
 
-         {% if data_dict.inchi_key %}
-           <tr>
-              <th scope="row" class="dataset-label">{{ _("InChI Key ") }}</th>
+          {% if iupac_name is defined and iupac_name %}
+            <tr>
+              <th width="25%" scope="row" class="dataset-label">{{ _("IUPAC Name") }}</th>
+              <td width="50%" class="dataset-details">{{ iupac_name }}</td>
+            </tr>
+          {% endif %}
+
+          {% if data_dict.inchi %}
+            <tr>
+              <th width="25%" scope="row" class="dataset-label">{{ _("InChI") }}</th>
+              <td width="50%" class="dataset-details">{{ data_dict.inchi }}</td>
+            </tr>
+          {% endif %}
+
+          {% if data_dict.smiles %}
+            <tr>
+              <th scope="row" class="dataset-label">{{ _("SMILES") }}</th>
+              <td class="dataset-details">{{ data_dict.smiles }}</td>
+            </tr>
+          {% endif %}
+
+          {% if data_dict.inchi_key %}
+            <tr>
+              <th scope="row" class="dataset-label">{{ _("InChI Key") }}</th>
               <td class="dataset-details">{{ data_dict.inchi_key }}</td>
-           </tr>
-         {% endif %}
+            </tr>
+          {% endif %}
 
-         {% if molecule_formula %}
-           <tr>
+          {% if molecule_formula %}
+            <tr>
               <th scope="row" class="dataset-label">{{ _("Molecular Formula") }}</th>
-              <td class="dataset-details"> {{ molecule_formula }}</td>
-           </tr>
+              <td class="dataset-details">{{ molecule_formula }}</td>
+            </tr>
+          {% endif %}
 
-         {% endif %}
-         {% if data_dict.exact_mass %}
-            {% set format_exact_mass = data_dict.exact_mass %}
-           <tr>
+          {% if data_dict.exact_mass %}
+            <tr>
               <th scope="row" class="dataset-label">{{ _("Exact Mass") }}</th>
-              <td class="dataset-details">{{ '%.3f' | format(data_dict.exact_mass | float) }} {{ _('g/mol') }}</td>
-           </tr>
-         {% endif %}
-          </tbody>
-    </table>
-   </div>
+              <td class="dataset-details">
+                {{ '%.3f' | format(data_dict.exact_mass | float) }} {{ _('g/mol') }}
+              </td>
+            </tr>
+          {% endif %}
+
+        </tbody>
+      </table>
+
+    </div>
   </div>
-      {% endif %}
-      {% endfor %}
+
+  {% for resource in pkg.resources %}
+    {% if resource.format|lower == 'cif' %}
+      {% snippet "snippets/ckanext_rdkit_visuals_crystal_visuals.html",
+        pkg=pkg,
+        resource=resource,
+        molecule_name=molecule_name if molecule_name is defined else ''
+      %}
+    {% endif %}
+  {% endfor %}
 
 </section>
-
-
