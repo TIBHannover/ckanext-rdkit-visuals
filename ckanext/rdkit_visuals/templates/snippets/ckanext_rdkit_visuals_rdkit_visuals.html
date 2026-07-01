@@ -6,7 +6,7 @@
   'molecular_formula': pkg.get('mol_formula')
 } %}
 
-{% set dest_url = h.url_for('rdkit_visuals.display_image', package_name=pkg.get('id'), _external=True) %}
+{% set dest_url = h.url_for('rdkit_visuals.display_image', package_name=pkg.get('id')) %}
 {% set molecule_formula = h.molecule_data(package_name=pkg.get('id')) %}
 {% set alter_names = h.alternate_names(package_name=pkg.get('id')) %}
 

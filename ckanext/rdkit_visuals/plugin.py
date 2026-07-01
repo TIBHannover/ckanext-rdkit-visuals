@@ -27,10 +27,10 @@ class RdkitVisualsPlugin(plugins.SingletonPlugin):
 
         blueprint.template_folder = u'templates'
         blueprint.add_url_rule(
-            u'/localhost:5000/dataset/<package_name>',
+            u'/rdkit_visuals/display-image/<package_name>',
             u'display_image',
             RdkitVisualsController.display_image,
-            methods=['POST']
+            methods=['GET', 'POST']
         )
         return blueprint
 

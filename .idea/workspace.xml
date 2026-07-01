@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="style: remove reference link, added doi to citation (IEEE format)">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="bug+refact: molecule chemical information block">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/snippets/resource_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/snippets/resource_item.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +19,9 @@
     <option name="groupingKeys">
       <option value="directory" />
     </option>
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="30110" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,6 +72,69 @@
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/resource_read.html" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000135660444291" />
+      <entry key="MS500" value="1.130186437515647" />
+      <entry key="S2" value="2.27273129198558" />
+      <entry key="S5" value="4.455340236039943" />
+      <entry key="S10" value="8.106711032967679" />
+      <entry key="S30" value="16.905916434247835" />
+      <entry key="S60" value="22.1677176926359" />
+      <entry key="M2" value="26.260173537189882" />
+      <entry key="M5" value="29.782042668371037" />
+      <entry key="M10" value="31.273494347075836" />
+      <entry key="M15" value="31.819780828860466" />
+      <entry key="M30" value="32.39439899378956" />
+      <entry key="H1" value="32.69314931964237" />
+      <entry key="H2" value="32.8455388646474" />
+      <entry key="H4" value="32.92250750622841" />
+      <entry key="D1" value="32.987047949668224" />
+      <entry key="W1" value="32.99814880655681" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.812263725419757" />
+      <entry key="MS500" value="1.085171105704887" />
+      <entry key="S2" value="2.253138336384995" />
+      <entry key="S5" value="4.440645612424864" />
+      <entry key="S10" value="8.09134398090024" />
+      <entry key="S30" value="16.892605920140152" />
+      <entry key="S60" value="22.158149494056847" />
+      <entry key="M2" value="26.25351199754803" />
+      <entry key="M5" value="29.77815161981965" />
+      <entry key="M10" value="31.271172279763025" />
+      <entry key="M15" value="31.81812801436029" />
+      <entry key="M30" value="32.39351370998277" />
+      <entry key="H1" value="32.69269060542965" />
+      <entry key="H2" value="32.84530530731909" />
+      <entry key="H4" value="32.92238965387771" />
+      <entry key="D1" value="32.98702815643953" />
+      <entry key="W1" value="32.99814597522362" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -81,10 +147,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/usr/lib/ckan/default/src/ckanext-rdkit-visuals/ckanext/rdkit_visuals/templates/package/snippets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
@@ -138,7 +209,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-024ed6589d45-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.23567.174" />
+        <option value="bundled-python-sdk-245168a56dbd-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.25134.203" />
       </set>
     </attachedChunks>
   </component>
@@ -437,7 +508,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755676226635</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="refactor: chemical information block">
+      <option name="closed" value="true" />
+      <created>1779197916601</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1779197916601</updated>
+    </task>
+    <task id="LOCAL-00041" summary="bug+refact: molecule chemical information block">
+      <option name="closed" value="true" />
+      <created>1779197949537</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1779197949537</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,8 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Migrating scripting" />
-    <MESSAGE value="deleting extra folder" />
     <MESSAGE value="add molecular formula column" />
     <MESSAGE value="changes to related resources list" />
     <MESSAGE value="Front-end related resource changes" />
@@ -480,6 +565,8 @@
     <MESSAGE value="style: remove EXPLORE and replace it with go to source" />
     <MESSAGE value="style: Resource btn for CIF with download &amp; go-to-source for urls" />
     <MESSAGE value="style: remove reference link, added doi to citation (IEEE format)" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: remove reference link, added doi to citation (IEEE format)" />
+    <MESSAGE value="refactor: chemical information block" />
+    <MESSAGE value="bug+refact: molecule chemical information block" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug+refact: molecule chemical information block" />
   </component>
 </project>
