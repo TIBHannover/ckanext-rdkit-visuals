@@ -22,7 +22,7 @@ class Molecules(Base):
 
     id = Column(_types.Integer, primary_key=True, autoincrement=True)
     inchi = Column(_types.String)
-    smiles = Column(_types.String)
+    canonical_smiles = Column(_types.String)
     inchi_key = Column(_types.String)
     exact_mass = Column(Float)
     mol_formula = Column(_types.String)
@@ -36,7 +36,7 @@ class Molecules(Base):
     # Additional methods can be added here as needed
 
     @classmethod
-    def create(cls, inchi, smiles, inchi_key, exact_mass, mol_formula,iupac_name, alternate_names, molecule_name):
+    def create(cls, inchi, canonical_smiles, inchi_key, exact_mass, mol_formula,iupac_name, alternate_names, molecule_name):
         """
         Create a new Molecule entry and store it in the database.
 
@@ -51,7 +51,7 @@ class Molecules(Base):
         """
         new_molecule = cls(
             inchi=inchi.strip(),
-            smiles=smiles,
+            canonical_smiles=canonical_smiles,
             inchi_key=inchi_key,
             exact_mass=exact_mass,
             mol_formula=mol_formula,
