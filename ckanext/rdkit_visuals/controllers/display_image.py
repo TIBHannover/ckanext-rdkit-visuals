@@ -4,7 +4,9 @@ import logging
 import os
 
 import ckan.plugins.toolkit as toolkit
+from ckan.model import Session
 from PIL import Image
+from sqlalchemy import text
 
 from ckanext.related_resources.models.related_resources import (
     RelatedResources as related_resources,
@@ -112,7 +114,29 @@ class RdkitVisualsController(object):
         if not package_id:
             return []
 
-        return molecule_rel.get_alternate_names_by_package_id(package_id)
+        query = text("""
+            SELECT names.name
+            FROM (
+                SELECT DISTINCT mn.name
+                FROM public.molecule_rel_data AS rel
+                JOIN rdk.molecule_names AS mn
+                  ON mn.molecule_id = rel.molecules_id
+                WHERE rel.package_id = :package_id
+                  AND mn.name IS NOT NULL
+                  AND btrim(mn.name) <> ''
+            ) AS names
+            ORDER BY lower(names.name), names.name
+        """)
+
+        try:
+            rows = Session.execute(query, {"package_id": package_id})
+            return [row[0] for row in rows]
+        except Exception:
+            log.exception(
+                "RDKit visuals: failed to load alternate names for package %s",
+                package_id,
+            )
+            return []
 
     @staticmethod
     def related_resources(package_name):
