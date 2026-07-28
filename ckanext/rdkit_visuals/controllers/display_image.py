@@ -102,28 +102,17 @@ class RdkitVisualsController(object):
         return molecule_formula
 
     @staticmethod
-    def alternames(package_name):
-        alternate_names = []
+    def alternames(package_id=None, package_name=None):
+        """Return alternate molecule names for a CKAN package ID.
 
-        package = toolkit.get_action("package_show")(
-            {},
-            {"name_or_id": package_name}
-        )
-        package_id = package["id"]
+        ``package_name`` remains accepted because older templates used that
+        keyword while passing the package ID as its value.
+        """
+        package_id = package_id or package_name
+        if not package_id:
+            return []
 
-        try:
-            alternate_names_list = related_resources.get_alternate_names_by_package_id(
-                package_id
-            )
-
-            for value in alternate_names_list:
-                names = "('')".join(value)
-                alternate_names.append(names)
-
-        except TypeError:
-            pass
-
-        return alternate_names
+        return molecule_rel.get_alternate_names_by_package_id(package_id)
 
     @staticmethod
     def related_resources(package_name):
