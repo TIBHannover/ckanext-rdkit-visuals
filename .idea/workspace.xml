@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="bug+refact: molecule chemical information block">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="chg: alternate_name from rdk.molecules_name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +22,7 @@
     </option>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="30110" />
+    <option name="cachedIndexableFilesCount" value="30112" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,23 +79,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000135660444291" />
-      <entry key="MS500" value="1.130186437515647" />
-      <entry key="S2" value="2.27273129198558" />
-      <entry key="S5" value="4.455340236039943" />
-      <entry key="S10" value="8.106711032967679" />
-      <entry key="S30" value="16.905916434247835" />
-      <entry key="S60" value="22.1677176926359" />
-      <entry key="M2" value="26.260173537189882" />
-      <entry key="M5" value="29.782042668371037" />
-      <entry key="M10" value="31.273494347075836" />
-      <entry key="M15" value="31.819780828860466" />
-      <entry key="M30" value="32.39439899378956" />
-      <entry key="H1" value="32.69314931964237" />
-      <entry key="H2" value="32.8455388646474" />
-      <entry key="H4" value="32.92250750622841" />
-      <entry key="D1" value="32.987047949668224" />
-      <entry key="W1" value="32.99814880655681" />
+      <entry key="MS100" value="1.1245890409942454" />
+      <entry key="MS500" value="2.480131844818382" />
+      <entry key="S2" value="7.841588260752103" />
+      <entry key="S5" value="22.11937051934565" />
+      <entry key="S10" value="48.315602568659955" />
+      <entry key="S30" value="135.34660827731526" />
+      <entry key="S60" value="207.39713338514895" />
+      <entry key="M2" value="271.3057680950435" />
+      <entry key="M5" value="329.7065535862526" />
+      <entry key="M10" value="355.12202709277375" />
+      <entry key="M15" value="364.5229809784051" />
+      <entry key="M30" value="374.4641196860613" />
+      <entry key="H1" value="379.6540271393535" />
+      <entry key="H2" value="382.3070175277199" />
+      <entry key="H4" value="383.64844700973015" />
+      <entry key="D1" value="384.77403273710667" />
+      <entry key="W1" value="384.96770154199174" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -116,23 +117,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.812263725419757" />
-      <entry key="MS500" value="1.085171105704887" />
-      <entry key="S2" value="2.253138336384995" />
-      <entry key="S5" value="4.440645612424864" />
-      <entry key="S10" value="8.09134398090024" />
-      <entry key="S30" value="16.892605920140152" />
-      <entry key="S60" value="22.158149494056847" />
-      <entry key="M2" value="26.25351199754803" />
-      <entry key="M5" value="29.77815161981965" />
-      <entry key="M10" value="31.271172279763025" />
-      <entry key="M15" value="31.81812801436029" />
-      <entry key="M30" value="32.39351370998277" />
-      <entry key="H1" value="32.69269060542965" />
-      <entry key="H2" value="32.84530530731909" />
-      <entry key="H4" value="32.92238965387771" />
-      <entry key="D1" value="32.98702815643953" />
-      <entry key="W1" value="32.99814597522362" />
+      <entry key="MS100" value="1.086281101741638" />
+      <entry key="MS500" value="2.4630379956693416" />
+      <entry key="S2" value="7.828599174261856" />
+      <entry key="S5" value="22.10405693733014" />
+      <entry key="S10" value="48.29678447114627" />
+      <entry key="S30" value="135.322940697557" />
+      <entry key="S60" value="207.3738983503418" />
+      <entry key="M2" value="271.28699826830456" />
+      <entry key="M5" value="329.6952752956654" />
+      <entry key="M10" value="355.11527247569126" />
+      <entry key="M15" value="364.5181615365749" />
+      <entry key="M30" value="374.46152886451296" />
+      <entry key="H1" value="379.65268144125577" />
+      <entry key="H2" value="382.30633140823903" />
+      <entry key="H4" value="383.6481005400911" />
+      <entry key="D1" value="384.77397451049376" />
+      <entry key="W1" value="384.9676932120013" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -144,22 +145,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/usr/lib/ckan/default/src/ckanext-rdkit-visuals/ckanext/rdkit_visuals/templates/package/snippets",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/usr/lib/ckan/default/src/ckanext-rdkit-visuals/ckanext/rdkit_visuals/templates/package/snippets&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/snippets" />
@@ -209,7 +210,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-245168a56dbd-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.25134.203" />
+        <option value="bundled-python-sdk-c6d794e1806d-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.309" />
       </set>
     </attachedChunks>
   </component>
@@ -524,7 +525,39 @@
       <option name="project" value="LOCAL" />
       <updated>1779197949537</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="fix: Refactor display_image and blueprint route">
+      <option name="closed" value="true" />
+      <created>1782897491577</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1782897491577</updated>
+    </task>
+    <task id="LOCAL-00043" summary="rename: smiles to canonical_smiles in molecules">
+      <option name="closed" value="true" />
+      <created>1783518836020</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1783518836020</updated>
+    </task>
+    <task id="LOCAL-00044" summary="chg: alternate_name from rdk.molecules_name">
+      <option name="closed" value="true" />
+      <created>1785247110081</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1785247110081</updated>
+    </task>
+    <task id="LOCAL-00045" summary="chg: alternate_name from rdk.molecules_name">
+      <option name="closed" value="true" />
+      <created>1785247973668</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1785247973668</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,9 +575,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add molecular formula column" />
-    <MESSAGE value="changes to related resources list" />
-    <MESSAGE value="Front-end related resource changes" />
     <MESSAGE value="Data &amp; Resource page view changes" />
     <MESSAGE value="Advance search image" />
     <MESSAGE value="migration tables all" />
@@ -567,6 +597,9 @@
     <MESSAGE value="style: remove reference link, added doi to citation (IEEE format)" />
     <MESSAGE value="refactor: chemical information block" />
     <MESSAGE value="bug+refact: molecule chemical information block" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug+refact: molecule chemical information block" />
+    <MESSAGE value="fix: Refactor display_image and blueprint route" />
+    <MESSAGE value="rename: smiles to canonical_smiles in molecules" />
+    <MESSAGE value="chg: alternate_name from rdk.molecules_name" />
+    <option name="LAST_COMMIT_MESSAGE" value="chg: alternate_name from rdk.molecules_name" />
   </component>
 </project>

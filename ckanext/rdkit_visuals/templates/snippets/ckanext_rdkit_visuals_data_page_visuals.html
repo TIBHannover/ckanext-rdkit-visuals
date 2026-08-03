@@ -3,7 +3,7 @@
 {% set dest_url = h.url_for('rdkit_visuals.display_image', package_name = pkg.get('id'), _external=True) %}
 {% set mol_data = h.get_molecule_data(package_id=pkg.get('id')) or ('', '', '', '', '') %}
 {% set mol_formula, exact_mass, inchi, iupac_name, molecule_name = mol_data %}
-{% set alter_names = h.alternate_names(package_name = pkg.get('id')) %}
+{% set alter_names = h.alternate_names(inchi_key=pkg.get('inchi_key')) %}
 
 
 <input type="hidden" id="ajax_url" value="{{dest_url}}">
@@ -110,6 +110,5 @@
 
 </div>
 </section>
-
 
 

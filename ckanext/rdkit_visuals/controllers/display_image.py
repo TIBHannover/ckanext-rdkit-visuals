@@ -104,24 +104,38 @@ class RdkitVisualsController(object):
         return molecule_formula
 
     @staticmethod
-    def alternames(package_id=None, package_name=None):
-        """Return alternate molecule names for a CKAN package ID.
+    def alternames(inchi_key=None, package_id=None, package_name=None):
+        """Return alternate molecule names for an InChIKey.
 
-        ``package_name`` remains accepted because older templates used that
-        keyword while passing the package ID as its value.
+        ``package_id`` and ``package_name`` are retained for callers that do
+        not yet have the InChIKey.  They are resolved through ``package_show``
+        before querying the molecule tables.
         """
-        package_id = package_id or package_name
-        if not package_id:
+        package_reference = package_id or package_name
+        if not inchi_key and package_reference:
+            try:
+                package = toolkit.get_action("package_show")(
+                    {}, {"name_or_id": package_reference}
+                )
+                inchi_key = package.get("inchi_key")
+            except Exception:
+                log.exception(
+                    "RDKit visuals: failed to resolve InChIKey for package %s",
+                    package_reference,
+                )
+                return []
+
+        if not inchi_key:
             return []
 
         query = text("""
             SELECT names.name
             FROM (
                 SELECT DISTINCT mn.name
-                FROM public.molecule_rel_data AS rel
+                FROM rdk.molecules AS molecule
                 JOIN rdk.molecule_names AS mn
-                  ON mn.molecule_id = rel.molecules_id
-                WHERE rel.package_id = :package_id
+                  ON mn.molecule_id = molecule.id
+                WHERE molecule.inchi_key = :inchi_key
                   AND mn.name IS NOT NULL
                   AND btrim(mn.name) <> ''
             ) AS names
@@ -129,12 +143,12 @@ class RdkitVisualsController(object):
         """)
 
         try:
-            rows = Session.execute(query, {"package_id": package_id})
+            rows = Session.execute(query, {"inchi_key": inchi_key})
             return [row[0] for row in rows]
         except Exception:
             log.exception(
-                "RDKit visuals: failed to load alternate names for package %s",
-                package_id,
+                "RDKit visuals: failed to load alternate names for InChIKey %s",
+                inchi_key,
             )
             return []
 

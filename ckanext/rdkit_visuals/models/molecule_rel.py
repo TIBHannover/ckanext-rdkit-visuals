@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 import datetime
-from sqlalchemy import Column, ForeignKey, func, String, distinct
+import logging
+
+from sqlalchemy import Column, ForeignKey, func, String, distinct, text
 from sqlalchemy.orm import relationship
 from sqlalchemy import orm
 

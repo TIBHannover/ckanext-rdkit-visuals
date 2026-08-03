@@ -8,7 +8,7 @@
 
 {% set dest_url = h.url_for('rdkit_visuals.display_image', package_name=pkg.get('id')) %}
 {% set molecule_formula = h.molecule_data(package_name=pkg.get('id')) %}
-{% set alter_names = h.alternate_names(package_name=pkg.get('id')) %}
+{% set alter_names = h.alternate_names(inchi_key=pkg.get('inchi_key')) %}
 
 {# Uncomment this if your helper returns these values #}
 {# {% set mol_formula, exact_mass, inchi, iupac_name, molecule_name = h.get_molecule_data(package_id=pkg.get('id')) %} #}
