@@ -134,7 +134,7 @@ class RdkitVisualsController(object):
                 SELECT DISTINCT mn.name
                 FROM rdk.molecules AS molecule
                 JOIN rdk.molecule_names AS mn
-                  ON mn.molecule_id = molecule.id
+                  ON mn.molecule_id = molecule.molecule_id
                 WHERE molecule.inchi_key = :inchi_key
                   AND mn.name IS NOT NULL
                   AND btrim(mn.name) <> ''
