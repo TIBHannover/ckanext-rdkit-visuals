@@ -47,21 +47,6 @@
 
     <div class="col-md-7">
 
-      {% if alter_names %}
-        <table class="table">
-          <tbody>
-            <tr>
-              <th width="25%" scope="row" class="dataset-label">{{ _("Synonyms") }}</th>
-              <td width="50%" class="dataset-details">
-                {% for name in alter_names %}
-                  {{ name }}{% if not loop.last %}<br>{% endif %}
-                {% endfor %}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      {% endif %}
-
       <table class="table">
         <tbody>
 
