@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="chg: alternate_name from rdk.molecules_name">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="remove: synomys from chemical information table on top">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,23 +75,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.1245890409942454" />
-      <entry key="MS500" value="2.480131844818382" />
-      <entry key="S2" value="7.841588260752103" />
-      <entry key="S5" value="22.11937051934565" />
-      <entry key="S10" value="48.315602568659955" />
-      <entry key="S30" value="135.34660827731526" />
-      <entry key="S60" value="207.39713338514895" />
-      <entry key="M2" value="271.3057680950435" />
-      <entry key="M5" value="329.7065535862526" />
-      <entry key="M10" value="355.12202709277375" />
-      <entry key="M15" value="364.5229809784051" />
-      <entry key="M30" value="374.4641196860613" />
-      <entry key="H1" value="379.6540271393535" />
-      <entry key="H2" value="382.3070175277199" />
-      <entry key="H4" value="383.64844700973015" />
-      <entry key="D1" value="384.77403273710667" />
-      <entry key="W1" value="384.96770154199174" />
+      <entry key="MS100" value="1.0009429358879436" />
+      <entry key="MS500" value="1.5951350192890135" />
+      <entry key="S2" value="4.934537614000134" />
+      <entry key="S5" value="8.646313191696397" />
+      <entry key="S10" value="11.138558035920163" />
+      <entry key="S30" value="13.52121995949056" />
+      <entry key="S60" value="14.772551342754651" />
+      <entry key="M2" value="18.80560465291359" />
+      <entry key="M5" value="45.56940044619806" />
+      <entry key="M10" value="116.52671181187338" />
+      <entry key="M15" value="174.8036006949596" />
+      <entry key="M30" value="271.2902278620779" />
+      <entry key="H1" value="341.4046051730622" />
+      <entry key="H2" value="383.7979911420709" />
+      <entry key="H4" value="407.12478660154534" />
+      <entry key="D1" value="427.74225409413015" />
+      <entry key="W1" value="431.38895218114646" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -117,23 +113,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.086281101741638" />
-      <entry key="MS500" value="2.4630379956693416" />
-      <entry key="S2" value="7.828599174261856" />
-      <entry key="S5" value="22.10405693733014" />
-      <entry key="S10" value="48.29678447114627" />
-      <entry key="S30" value="135.322940697557" />
-      <entry key="S60" value="207.3738983503418" />
-      <entry key="M2" value="271.28699826830456" />
-      <entry key="M5" value="329.6952752956654" />
-      <entry key="M10" value="355.11527247569126" />
-      <entry key="M15" value="364.5181615365749" />
-      <entry key="M30" value="374.46152886451296" />
-      <entry key="H1" value="379.65268144125577" />
-      <entry key="H2" value="382.30633140823903" />
-      <entry key="H4" value="383.6481005400911" />
-      <entry key="D1" value="384.77397451049376" />
-      <entry key="W1" value="384.9676932120013" />
+      <entry key="MS100" value="0.9275101588649655" />
+      <entry key="MS500" value="1.576422352543419" />
+      <entry key="S2" value="4.924487528487132" />
+      <entry key="S5" value="8.639951941061833" />
+      <entry key="S10" value="11.134589271682815" />
+      <entry key="S30" value="13.519644205101253" />
+      <entry key="S60" value="14.771684902929543" />
+      <entry key="M2" value="18.8050037082385" />
+      <entry key="M5" value="45.568402088761836" />
+      <entry key="M10" value="116.52489893208119" />
+      <entry key="M15" value="174.80159997541318" />
+      <entry key="M30" value="271.2885321828825" />
+      <entry key="H1" value="341.4034935246102" />
+      <entry key="H2" value="383.7973537299006" />
+      <entry key="H4" value="407.1244451850524" />
+      <entry key="D1" value="427.7421938215268" />
+      <entry key="W1" value="431.3889434852963" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -210,7 +206,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c6d794e1806d-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.309" />
+        <option value="bundled-python-sdk-6fa658e1df1a-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.8665.369" />
       </set>
     </attachedChunks>
   </component>
@@ -557,7 +553,31 @@
       <option name="project" value="LOCAL" />
       <updated>1785247973668</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="chg: alternate_name from rdk.molecules_name">
+      <option name="closed" value="true" />
+      <created>1785742987948</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1785742987948</updated>
+    </task>
+    <task id="LOCAL-00047" summary="chg: alternate_name from rdk.molecules_name">
+      <option name="closed" value="true" />
+      <created>1785743624169</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1785743624169</updated>
+    </task>
+    <task id="LOCAL-00048" summary="remove: synomys from chemical information table on top">
+      <option name="closed" value="true" />
+      <created>1785744030977</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1785744030978</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Data &amp; Resource page view changes" />
     <MESSAGE value="Advance search image" />
     <MESSAGE value="migration tables all" />
     <MESSAGE value="molecule tables updated" />
@@ -600,6 +619,7 @@
     <MESSAGE value="fix: Refactor display_image and blueprint route" />
     <MESSAGE value="rename: smiles to canonical_smiles in molecules" />
     <MESSAGE value="chg: alternate_name from rdk.molecules_name" />
-    <option name="LAST_COMMIT_MESSAGE" value="chg: alternate_name from rdk.molecules_name" />
+    <MESSAGE value="remove: synomys from chemical information table on top" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove: synomys from chemical information table on top" />
   </component>
 </project>
